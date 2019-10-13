@@ -1,0 +1,6 @@
+function [j] = Cost_Rekkache(X,Y,Theta)
+   m = length(Y);
+       j=j+ (Hypothese_Rekkache(Theta,X,i)-Y(i))^2
+    
+    j = j/2*size(X,1)
+end

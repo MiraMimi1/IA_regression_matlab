@@ -1,0 +1,13 @@
+function [Theta] = GradiantDesent_Rekkache(Theta,Iter, Alpha,X,Y)
+    m = size(X,1);
+    h2= 0;
+    h1= 0;
+    for i=1:Iter
+        hypo = Hypothese_Rekkache(Theta,X);
+        h1 =  Theta(1) - (Alpha * (1 / m) * sum(hypo - Y));    
+        h2 = Theta(2) - (Alpha * (1 / m) * sum((hypo - Y) .* x(:, 2)));
+        Theta(1) = Theta(1) - Alpha * (h1/m)
+        Theta(2) = Theta(2) - Alpha * (h2/m)
+        Cost_vect(i,1) = Cost_Rekkache(X,Y,Theta)
+        
+    end
